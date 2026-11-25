@@ -1,59 +1,83 @@
-# FieldopsAngular
+# Field Ops (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.3.0.
+## Sobre o projeto
 
-## Development server
+O **Field Ops** é uma plataforma para planejamento, execução, acompanhamento e revisão de inspeções técnicas realizadas em campo.
 
-To start a local development server, run:
+Inspeções de equipamentos e instalações ainda costumam depender de formulários impressos, planilhas, fotos sem identificação e mensagens informais, o que causa perda de informações e pouca rastreabilidade. O Field Ops propõe um fluxo digital único, que conecta o trabalho do técnico em campo à gestão administrativa.
+
+Este repositório contém a versão em **Angular** do protótipo web da visão do **supervisor**, responsável por organizar os cadastros, planejar inspeções, atribuí-las aos técnicos e revisar os resultados.
+
+## Telas
+
+| Tela | Rota | O que faz |
+|---|---|---|
+| Login | `/` | Acesso administrativo (apenas visual) |
+| Dashboard | `/dashboard` | Indicadores, gráficos, alertas e inspeções recentes |
+| Clientes | `/clientes` | Lista, pesquisa, cadastro e exclusão |
+| Locais de inspeção | `/locais` | Lista, pesquisa, cadastro e exclusão |
+| Equipamentos | `/equipamentos` | Lista, pesquisa, cadastro e exclusão |
+| Modelos de checklist | `/modelos-checklist` | Lista, pesquisa, cadastro e exclusão |
+| Planejar inspeção | `/planejar` | Agenda uma inspeção e atribui a um técnico |
+| Acompanhamento | `/acompanhamento` | Progresso e filtro das inspeções por status |
+| Revisão | `/revisao` e `/revisao/:id` | Checklist, evidências, parecer, aprovação ou reprovação |
+
+A interface se adapta a telas menores e o painel tem modo escuro.
+
+> Por ser um protótipo, o projeto usa dados fictícios e não possui backend, banco de dados nem login real. As alterações são perdidas quando a página é recarregada.
+
+## Tecnologias
+
+- Angular 22
+- TypeScript
+- HTML e SCSS
+- Bootstrap 5
+- Bootstrap Icons
+
+## Recursos do Angular utilizados
+
+- Componentes standalone
+- Rotas com o Angular Router
+- Signals (`signal` e `computed`) para o estado das telas
+- Serviço injetável (`Dados`) para compartilhar informações entre as telas
+- Formulários com `FormsModule`
+- Controle de fluxo nos templates (`@for` e `@if`)
+
+## Como executar
+
+É necessário ter o [Node.js](https://nodejs.org) instalado, em uma versão compatível com o Angular 22.
 
 ```bash
-ng serve
+git clone https://github.com/SofiaCarolini/fieldops-angular.git
+cd fieldops-angular
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Depois, abra `http://localhost:4200` no navegador e clique em **Entrar**.
 
-## Code scaffolding
+## Estrutura principal
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── main.ts                  # inicialização da aplicação
+├── styles.scss              # identidade visual e modo escuro
+└── app/
+    ├── app.routes.ts        # rotas
+    ├── dados.ts             # serviço com os dados fictícios
+    ├── layout/              # menu lateral e barra superior
+    └── pages/
+        ├── login/
+        ├── dashboard/
+        ├── cadastros/       # clientes, locais, equipamentos e modelos
+        ├── planejar-inspecao/
+        ├── acompanhamento/
+        └── revisao-inspecao/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Integrantes
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Letícia Favero
+- Jean Bueno
+- Sofia Carolini
+- Kathelyn Tourino
