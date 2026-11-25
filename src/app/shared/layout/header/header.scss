@@ -1,0 +1,40 @@
+.topbar {
+  background: white;
+  padding: 22px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9edf2;
+
+  h2 {
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0;
+    color: #17243a;
+  }
+
+  span {
+    color: #7c8797;
+    font-size: 13px;
+  }
+}
+
+.header-actions,
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notification {
+  border: none;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 10px 13px;
+  font-size: 18px;
+}
+
+.user-info i {
+  font-size: 30px;
+  color: #334d70;
+}

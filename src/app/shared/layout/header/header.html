@@ -1,0 +1,48 @@
+
+<header class="topbar">
+  <h1>
+    <i class="bi bi-speedometer2 me-2"></i>
+    Dashboard
+  </h1>
+
+  <div class="form-check form-switch mb-0">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      role="switch"
+      id="darkSwitch"
+    />
+    <label class="form-check-label" for="darkSwitch">
+      <i class="bi bi-moon-stars"></i>
+      <span class="d-none d-sm-inline">Modo escuro</span>
+    </label>
+  </div>
+
+  <button class="icon-btn" type="button" title="Acessibilidade">
+    <i class="bi bi-universal-access"></i>
+  </button>
+
+  <div class="dropdown">
+    <a
+      class="d-flex align-items-center gap-2 text-decoration-none text-reset dropdown-toggle"
+      href="#"
+      data-bs-toggle="dropdown"
+    >
+      <span class="avatar">
+        <i class="bi bi-person"></i>
+      </span>
+
+      <span class="lh-sm d-none d-sm-block">
+        <strong>Supervisor</strong>
+        <span class="badge badge-free">Admin</span>
+        <br />
+        <small class="text-muted-fo">supervisor@fieldops.com</small>
+      </span>
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a class="dropdown-item" href="#">Meu perfil</a></li>
+      <li><a class="dropdown-item" routerLink="/login">Sair</a></li>
+    </ul>
+  </div>
+</header>
